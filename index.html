@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+		<style>
+		#info {
+		  position: absolute;
+		  top: 20px;
+		  width: 100%;
+		  padding: 10px;
+		  text-align: center;
+		  color: yellow;
+		  font-size:300%;
+		  float:left;
+		  display:none;
+		}
+		#gui {
+		  position: absolute;
+		  top: 0px;
+		  left: 0px;
+		  border: solid 1px green;
+		}
+
+		body {
+		  font-family:微軟正黑體;
+		  overflow: hidden;
+		  background-color:black;
+		  text-align:center;
+		  background-image: url("background.jpg");
+		}
+		.clock{
+		  height:50px;
+		  width:50px;
+		  position: absolute;
+		  top: 32px;
+		  left: 750px;
+		  z-index:10;
+		  display:none;
+		}
+		.howToPlayImg{
+		  width:50%;
+		  height:60%;
+		  position: absolute;
+		  left:25%;
+		  top:20%;
+		  display:none;
+		  z-index:10;
+		}
+		.loading{
+		  position:absolute;
+		  width:30%;
+		  height:50%;
+		  left:35%;
+		  top:25%;
+		  display:none;
+		}
+		p{
+		  font-size: 3vw;
+		  width:30vw;
+		  padding:5px;
+		  left:35%;
+		  position: absolute;
+		  color:white;
+		}
+		.option:hover{
+			background:rgba(200,200,200,0.7);
+			border-radius: 100%;
+			box-shadow:0 0 20px 10px rgba(200,200,200,0.7);
+			text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff;
+			-webkit-transform:scale(1.1);
+			color:black;
+			font-weight:bold;
+		}
+		.option{
+		    
+			color:rgba(200,200,100,1);
+		}
+		.title{
+		    font-size: 6vw;
+		}
+		.a{
+		  position: absolute;
+		  top:3%;
+		  left:15%;
+		  width:70%;
+		  height:80%;
+		  border:solid 1px;
+		}
+		hr{
+		  position: absolute;
+		  width:40%;
+		  top:38%;
+		  left:30%;
+		  border: 1px solid #555;
+		}
+		</style>
+		
+		<title></title>
+		<script type="text/javascript" src="js/three.min.js" ></script>
+		<script type="text/javascript" src="js/dat.gui.min.js" ></script>
+		<script type="text/javascript" src="js/MTLLoader.js" ></script>
+		<script type="text/javascript" src="js/OBJLoader.js" ></script>
+		<script type="text/javascript" src="js/ColladaLoader.js"></script>
+		<script type="text/javascript" src="js/demo.js" ></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		
+	</head>
+	<body>
+		<img id=clock class=clock src="CSE_GO/clock2.png"></img>
+		<img id=howToPlayImg class=howToPlayImg src="CSE_GO/howToPlay.png"></img>
+		<img id=loading class=loading src="CSE_GO/loading.gif"></img>
+		<p class=a></p>
+		<div id="info">Time</div>
+		<p id=start class=option style="top:38%;">開始遊戲</p>
+		<p id=howToPlay class=option style="top:50%;">遊戲說明</p>
+		<p id=exit class=option style="top:62%;">離開遊戲</p>
+		<p id=title class=title style="top:5%;">CSE : GO</p>
+		<hr>
+
+		<audio id="soundtrack" loop style="display:none">
+		<source src="sounds/Butterfly.mp3" type='audio/mp3'>
+		</audio>
+		<audio id="buttonClick"  style="display:none">
+		<source src="sounds/buttonClick.mp3" type='audio/mp3'>
+		</audio>
+		<audio id="rocket"  style="display:none">
+		<source src="sounds/Rocket.mp3" type='audio/mp3'>
+		</audio>
+		<audio id="uzi"  style="display:none">
+		<source src="sounds/Uzi.mp3" type='audio/mp3'>
+		</audio>
+		<audio id="scream"  style="display:none">
+		<source src="sounds/scream.mp3" type='audio/mp3'>
+		</audio>
+	</body>
+</html>
+
