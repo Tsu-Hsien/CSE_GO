@@ -213,9 +213,9 @@ function start(){
 	$("p").hide();
 	drawGUI();
 	soundTrack.play();
+	modelsLoad();
 	setTimeout(decreseTime, 1000);
 	setTimeout(bornGhost,2000);
-	modelsLoad();
 	camera.position.set(0, player.height, -5);
 	camera.lookAt(new THREE.Vector3(0,player.height,0));
 	renderer = new THREE.WebGLRenderer();
@@ -441,6 +441,7 @@ function bulletControl(){
 	}
 }
 function end(){
+	$(".button").show();
 	$("#blackboard").show();
 	$("#postIt").css("left","27%");
 	$("#postIt2").css("left","52%");
