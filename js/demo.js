@@ -18,7 +18,7 @@ var crate, crateTexture, crateNormalMap, crateBumpMap;
 var gui;
 var heightGUI,speedGUI,turnSpeedGUI,canShootGUI,skyGUI;
 var keyboard = {};
-var player = { weapon:"Uzi",height:1.8, speed:0.5, turnSpeed:Math.PI*0.08, canShoot:0 ,music:false,moveAble:1,sky:"morning"};
+var player = { live:0,kill:0,weapon:"Uzi",height:1.8, speed:0.5, turnSpeed:Math.PI*0.08, canShoot:0 ,music:false,moveAble:1,sky:"morning"};
 var USE_WIREFRAME = false;
 var soundTrack;
 var rocketSound;
@@ -273,7 +273,7 @@ function modelsLoad(){
 
 }
 function floorLoad(){
-	var floorTexture = new THREE.ImageUtils.loadTexture( 'grasslight-big.jpg' );
+	var floorTexture = new THREE.ImageUtils.loadTexture( 'CSE_GO/grasslight-big.jpg' );
 	floorTexture.wrapS = floorTexture.wrapT = THREE.RepeatWrapping;
 	floorTexture.repeat.set( 50, 50 );
 	var floorMaterial = new THREE.MeshBasicMaterial( { map: floorTexture, side: THREE.DoubleSide } );
@@ -382,6 +382,7 @@ function decreseTime(){
 		player.moveAble=0;
 	}
 	else{gameTime--;
+	player.live++;
 	document.getElementById("info").innerHTML = parseInt(gameTime);
 	setTimeout(decreseTime, 1000);}
 }
@@ -428,6 +429,7 @@ function bulletControl(){
 				if(weaponNumber==0){bullets[index].position.y=-10;
 				bullets[index].alive = false;}
 				scene.remove(ghosts[i].mesh);
+				player.kill++;
 				ghostsBox.splice(i,1);//Array移除內容
 				ghosts.splice(i,1);//Array移除內容
 				gameTime++;
@@ -438,10 +440,29 @@ function bulletControl(){
 		bulletsBox[index].update();
 	}
 }
-
+function end(){
+	$("#blackboard").show();
+	$("#postIt").css("left","27%");
+	$("#postIt2").css("left","52%");
+	$("#postIt").show();
+	$("#postIt2").show();
+	$("#kill").css({"top":"27%","left":"23%"});
+	$("#live").css({"top":"27%","left":"47%"});
+	$("#kill").show();
+	$("#live").show();
+	$("#notetext1").html(player.kill);
+	$("#notetext2").html(player.live);
+	$("#notetext1").css({"top":"17%","left":"22%","color": "black", "font-size": "10vw"});
+	$("#notetext2").css({"top":"17%","left":"47%","color": "black", "font-size": "10vw"});
+	$("#notetext1").show();
+	$("#notetext2").show();
+	$("#end").css("font-size","130%");
+	$("#end").show();
+	//alert(player.live+","+player.kill);
+	cancelAnimationFrame();
+}
 function animate(){
-	if(gameTime<=0){
-	cancelAnimationFrame();}
+	if(gameTime<=0)end();
 	//orbitcontrols.update();
 	if( RESOURCES_LOADED == false ){
 		requestAnimationFrame(animate);
