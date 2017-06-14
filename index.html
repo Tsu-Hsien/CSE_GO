@@ -5,12 +5,13 @@
 		<style>
 		#info {
 		  position: absolute;
-		  top: 20px;
-		  width: 100%;
+		  top: 1vw;
+		  left:47vw;
+		  width: 10vw;
 		  padding: 10px;
 		  text-align: center;
 		  color: yellow;
-		  font-size:300%;
+		  font-size:4vw;
 		  float:left;
 		  display:none;
 		}
@@ -26,14 +27,14 @@
 		  overflow: hidden;
 		  background-color:black;
 		  text-align:center;
-		  background-image: url("background.jpg");
+		  background-image: url("CSE_GO/background.jpg");
 		}
 		.clock{
-		  height:50px;
-		  width:50px;
+		  height:5vw;
+		  width:5vw;
 		  position: absolute;
-		  top: 32px;
-		  left: 750px;
+		  top: 2vw;
+		  left: 42vw;
 		  z-index:10;
 		  display:none;
 		}
@@ -71,8 +72,38 @@
 			color:black;
 			font-weight:bold;
 		}
+		.creater{
+		  position:absolute;
+		  font-size:20px;
+		  top:90%;
+		  left:80%;
+		}
+		.blackboard{
+		  position:absolute;
+		  width:60%;
+		  top:10%;
+		  left:20%;
+		  display:none;
+		  z-index:20;
+		}
+		.postIt{
+		  margin-left: 5px;
+		  width: 20%;
+		  position:absolute;
+		  top:30%;
+		  left:40%;
+		  display:none;
+		  z-index:21;
+		}
+		.end{
+		  position:absolute;
+		  color:black;
+		  top:35%;
+		  left:42%;
+		  display:none;
+		  z-index:22;
+		}
 		.option{
-		    
 			color:rgba(200,200,100,1);
 		}
 		.title{
@@ -109,7 +140,14 @@
 		<img id=clock class=clock src="CSE_GO/clock2.png"></img>
 		<img id=howToPlayImg class=howToPlayImg src="CSE_GO/howToPlay.png"></img>
 		<img id=loading class=loading src="CSE_GO/loading.gif"></img>
-		<p class=a></p>
+		<img id=blackboard class=blackboard src="CSE_GO/blackboard.jpg"></img>
+		<img id=postIt class=postIt src="CSE_GO/postIt.png"></img>
+		<img id=postIt2 class=postIt src="CSE_GO/postIt.png"></img>
+
+		<p class=end id=kill>殺敵數</p>
+		<p class=end id=live>存活時間</p>
+		<p class=end id=notetext1></p>
+		<p class=end id=notetext2></p>
 		<div id="info">Time</div>
 		<p id=start class=option style="top:38%;">開始遊戲</p>
 		<p id=howToPlay class=option style="top:50%;">遊戲說明</p>
@@ -132,6 +170,7 @@
 		<audio id="scream"  style="display:none">
 		<source src="sounds/scream.mp3" type='audio/mp3'>
 		</audio>
+		<a  href="https://www.facebook.com/profile.php?id=100000265670181"><p class="creater">creat by:帥哥</p></a>
 	</body>
 </html>
 
