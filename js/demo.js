@@ -171,7 +171,11 @@ function init(){
 	$("#exit").click(function(){alert("QAQ\n鼻要離開啦");window.close();});
 	$("#howToPlay").click(function(){$("#howToPlayImg").show();});
 	$("#howToPlayImg").click(function(){
-		$( ".howToPlayImg" ).toggle("explode");});
+		$( "#howToGameImg" ).toggle("explode");});
+	$("#howToGameImg").click(function(){
+		$( "#howToGameImg" ).toggle("explode");
+		$( "#howToPlayImg" ).toggle("explode");
+		});
 	$("#start").click(function(){$("#loading").show();});
 	loadingManager = new THREE.LoadingManager();
 	loadingManager.onLoad = function(){
