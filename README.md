@@ -8,12 +8,18 @@
 
 <p >
     <img src="https://github.com/Zhen-Chein/CSE_GO/blob/master/CSE_GO/howToGame.png" height="256">
-  </a>
 </p>
 
 ## 操作說明
 
 <p >
     <img src="https://github.com/Zhen-Chein/CSE_GO/blob/master/CSE_GO/howToPlay.png" height="256">
-  </a>
+</p>
+
+## 遊戲畫面
+
+<p >
+    <img src="https://github.com/Zhen-Chein/CSE_GO/blob/master/CSE_GO/gun1.png" width="30%" height="180">
+    <img src="https://github.com/Zhen-Chein/CSE_GO/blob/master/CSE_GO/gun2.png" width="30%" height="180">
+    <img src="https://github.com/Zhen-Chein/CSE_GO/blob/master/CSE_GO/sky2.png" width="30%" height="180">
 </p>
