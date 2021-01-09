@@ -1,7 +1,7 @@
 # CSE_GO
 一個3D射擊遊戲，利用THREE.js為主所做出來的期末專案。
 
-[Link to Game](https://zhen-chein.github.io/CSE_GO/index.html)
+[Link to Game](https://Tsu-Hsien.github.io/CSE_GO/index.html)
 
 
 ## 遊戲說明
